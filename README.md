@@ -57,6 +57,7 @@ PORT=3000
 ```
 
 A sample .env has already been provided.
+
 ---
 
 ### 4) Start the server
