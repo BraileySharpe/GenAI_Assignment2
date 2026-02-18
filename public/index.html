@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Prompt Proxy</title>
+    <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+    <main class="container">
+        <header class="header">
+            <h1>Architecting the Prompt Proxy</h1>
+            <p class="subtitle">By Brailey Sharpe</p>
+        </header>
+
+        <section class="card">
+            <div class="grid">
+                <div class="field">
+                    <label for="persona">System Prompt (Persona)</label>
+                    <select id="persona"></select>
+                    <div id="personaHelp" class="help"></div>
+                </div>
+
+                <div class="field">
+                    <label for="temp">Temperature: <span id="tempValue">0.7</span></label>
+                    <input id="temp" type="range" min="0" max="1" step="0.1" value="0.7" />
+                    <div class="help">
+                        T→0 deterministic, T→1 creative. Adjust to see how it affects the output!
+                    </div>
+                </div>
+            </div>
+
+            <div class="field">
+                <label for="userInput">User Input</label>
+                <textarea id="userInput" rows="7"
+                    placeholder="Ask for code, an explanation, or creative content..."></textarea>
+            </div>
+
+            <div class="row">
+                <button id="sendBtn">Send</button>
+                <button id="demoBtn" class="secondary"
+                    title="Loads a prompt that clearly shows temperature differences">
+                    Load Demo Prompt
+                </button>
+                <span id="status" class="status"></span>
+            </div>
+        </section>
+
+        <section class="card">
+            <div class="resultHeader">
+                <h2>Result</h2>
+                <div class="meta" id="meta"></div>
+            </div>
+            <pre id="result" class="resultBox">(Your model output will appear here.)</pre>
+        </section>
+
+        <section class="card">
+            <div class="resultHeader">
+                <h2>Submitted Prompt (Server → LLM)</h2>
+                <div class="meta">This shows the exact payload your proxy sent.</div>
+            </div>
+            <pre id="submittedPrompt" class="resultBox">(The submitted payload will appear here.)</pre>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
