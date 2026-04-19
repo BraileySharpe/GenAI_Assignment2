@@ -1,4 +1,4 @@
-# Prompt Proxy (Assignment 2: Architecting the Prompt Proxy)
+# Architecting Prompt Proxy
 ## By Brailey Sharpe
 
 This project implements a middleware-style **Prompt Proxy** that:
